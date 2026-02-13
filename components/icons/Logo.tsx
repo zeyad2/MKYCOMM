@@ -1,17 +1,40 @@
 import Image from 'next/image';
 
-export default function Logo({ className = "" }: { className?: string }) {
+export default function Logo({
+  className = '',
+  small = false,
+  width,
+  height,
+  dotSize,
+  dotColor,
+}: {
+  className?: string;
+  small?: boolean;
+  width?: number;
+  height?: number;
+  dotSize?: number;
+  dotColor?: string;
+}) {
+  const w = width ?? (small ? 70 : 110);
+  const h = height ?? (small ? 38 : 60);
+  const dot = dotSize ?? (small ? 4.5 : 7);
+
   return (
-    <div className={`flex items-end gap-1 ${className}`}>
+    <div
+      className={`group flex items-end ${small ? 'py-2.5 gap-[5px]' : 'py-4 gap-2'} ${className}`}
+    >
       <Image
-        src="/MKY COMM.png"
+        src="/MKYLogo.svg"
         alt="MKYCOMM"
-        width={80}
-        height={40}
+        width={w}
+        height={h}
         priority
-        className="object-contain w-auto h-auto"
+        className="object-contain"
       />
-      <div className="w-2 h-2 rounded-full bg-blue-500 mb-1" />
+      <div
+        className={`rounded-full transition-colors ${dotColor ? '' : 'bg-accent-blue group-hover:bg-accent-yellow-hover'}`}
+        style={{ width: `${dot}px`, height: `${dot}px`, ...(dotColor ? { background: dotColor } : {}) }}
+      />
     </div>
   );
 }

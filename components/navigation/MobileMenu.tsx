@@ -2,7 +2,9 @@
 
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Button from '@/components/ui/Button';
+import Logo from '@/components/icons/Logo';
+import LocationIndicators from '@/components/ui/LocationIndicators';
+import FooterInfo from '@/components/ui/FooterInfo';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -10,7 +12,11 @@ interface MobileMenuProps {
   navItems: Array<{ label: string; href: string }>;
 }
 
-export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProps) {
+export default function MobileMenu({
+  isOpen,
+  onClose,
+  navItems,
+}: MobileMenuProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -33,7 +39,7 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[55]"
             onClick={onClose}
           />
 
@@ -43,59 +49,54 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-black border-l border-white/10 z-50 p-8"
+            className="fixed top-0 right-0 bottom-0 w-[300px] bg-black shadow-[-30px_0px_70px_#0F0F0F] z-[60] p-6 flex flex-col gap-6"
           >
-            <div className="flex flex-col h-full">
-              {/* Close button area */}
-              <div className="flex justify-end mb-12">
-                <button
-                  onClick={onClose}
-                  className="text-white"
-                  aria-label="Close menu"
+            {/* Top: Close button + Logo */}
+            <div className="flex items-center justify-between">
+              <button
+                onClick={onClose}
+                className="text-white"
+                aria-label="Close menu"
+              >
+                <svg
+                  className="w-[21px] h-[20px]"
+                  viewBox="0 0 21 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.68}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
+                  <path d="M1 1L20 19" />
+                  <path d="M20 1L1 19" />
+                </svg>
+              </button>
+              <Logo small />
+            </div>
 
-              {/* Navigation Items */}
-              <nav className="flex-1">
-                <ul className="space-y-6">
-                  {navItems.map((item, index) => (
-                    <motion.li
-                      key={item.label}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <a
-                        href={item.href}
-                        className="text-white text-2xl font-medium hover:text-[#F5C842] transition-colors block"
-                        onClick={onClose}
-                      >
-                        {item.label}
-                      </a>
-                    </motion.li>
-                  ))}
-                </ul>
+            {/* Content area */}
+            <div className="flex flex-col flex-1 gap-12">
+              {/* Nav Items */}
+              <nav className="flex flex-col gap-3">
+                {navItems.map((item, index) => (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    className="text-base font-normal leading-[150%] text-white hover:text-white/80 transition-colors"
+                    onClick={onClose}
+                  >
+                    {item.label}
+                  </motion.a>
+                ))}
               </nav>
 
-              {/* CTA Button */}
-              <div className="mt-8">
-                <Button variant="secondary" className="w-full" size="lg">
-                  Let&apos;s Talk
-                </Button>
+              {/* Bottom section - pushed to bottom */}
+              <div className="mt-auto flex flex-col gap-12">
+                <LocationIndicators />
+                <FooterInfo />
               </div>
             </div>
           </motion.div>
