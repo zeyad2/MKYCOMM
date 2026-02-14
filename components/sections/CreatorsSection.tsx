@@ -48,7 +48,8 @@ export default function CreatorsSection() {
                 src="/creators-background.png"
                 alt=""
                 fill
-                className="object-cover"
+                className="object-cover " // Added object-right-top
+                style={{ transform: 'scaleY(-1) scaleX(-1)' }}      // Optional: Flips the image horizontally and vertically
               />
             </div>
 
@@ -76,7 +77,7 @@ export default function CreatorsSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    className="text-[48px] md:text-[64px] lg:text-[80px] leading-none font-[family-name:var(--font-coolvetica)]"
+                    className="text-[48px] md:text-[64px] lg:text-[80px] leading-none font-coolvetica"
                   >
                     Welcome to
                     <br />
@@ -110,7 +111,7 @@ export default function CreatorsSection() {
                         className="object-contain"
                       />
                     </div>
-                    <p className="text-[40px] md:text-[52px] lg:text-[64px] leading-[1.05] text-white italic font-[family-name:var(--font-coolvetica)]">
+                    <p className="text-[40px] md:text-[52px] lg:text-[64px] leading-[1.05] text-white italic font-coolvetica">
                       If you are
                     </p>
                   </motion.div>
@@ -120,12 +121,12 @@ export default function CreatorsSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.7 }}
-                    className="flex flex-col lg:flex-row gap-6 lg:gap-3 items-start lg:items-center lg:justify-between w-full"
+                    className="flex flex-col gap-6 lg:gap-3 w-full"
                   >
-                    <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 lg:gap-[149px] items-start sm:items-center">
+                    <div className="flex flex-row gap-6 sm:gap-12 lg:gap-[149px] items-start sm:items-center lg:items-center">
                       {/* Content Creator */}
                       <div className="flex flex-col items-start sm:items-center justify-center">
-                        <p className="text-[24px] md:text-[28px] lg:text-[32px] leading-[1.2] md:leading-[30px] text-white capitalize italic font-[family-name:var(--font-coolvetica)]">
+                        <p className="text-[24px] md:text-[28px] lg:text-[32px] leading-[1.2] md:leading-[30px] text-white capitalize italic font-coolvetica">
                           Content
                           <br />
                           Creator
@@ -134,19 +135,28 @@ export default function CreatorsSection() {
 
                       {/* Looking for a Content creator */}
                       <div className="flex flex-col items-start sm:items-center justify-center">
-                        <p className="text-[24px] md:text-[28px] lg:text-[32px] leading-[1.2] md:leading-[30px] text-white capitalize italic font-[family-name:var(--font-coolvetica)]">
+                        <p className="text-[24px] md:text-[28px] lg:text-[32px] leading-[1.2] md:leading-[30px] text-white capitalize italic font-coolvetica">
                           Looking for a
                           <br />
                           Content creator
                         </p>
                       </div>
+
+                      {/* Back to Creators Button (desktop only) */}
+                      <div className="hidden lg:flex items-end justify-end flex-1">
+                        <button className="bg-[#000fff]  hover:bg-[#000dd8] transition-colors px-6 md:px-8 py-3 md:py-4 rounded-full w-full sm:w-auto">
+                          <span className="text-white font-bold text-sm md:text-base tracking-[-0.25px] font-[family-name:var(--font-sans)]">
+                            Explore Creators
+                          </span>
+                        </button>
+                      </div>
                     </div>
 
-                    {/* Back to Creators Button */}
-                    <div className="flex items-end justify-end lg:flex-1 w-full lg:w-auto">
-                      <button className="bg-[#000fff] hover:bg-[#000dd8] transition-colors px-6 md:px-8 py-3 md:py-4 rounded-full w-full sm:w-auto">
-                        <span className="text-white font-bold text-sm md:text-base tracking-[-0.25px] font-[family-name:var(--font-sans)]">
-                         Explore Creators
+                    {/* Back to Creators Button (mobile only) */}
+                    <div className="lg:hidden w-full">
+                      <button className="bg-[#000fff] hover:bg-[#000dd8] transition-colors px-4 py-[10px] rounded-full w-full flex justify-center items-start">
+                        <span className="text-white font-bold text-sm tracking-[-0.25px] font-[family-name:var(--font-sans)]">
+                          Explore Creators
                         </span>
                       </button>
                     </div>

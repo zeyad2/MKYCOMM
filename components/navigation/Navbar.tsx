@@ -18,17 +18,50 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Header Bar - Logo - Matches Figma: px-[120px] py-[10px] */}
-      <header className="absolute top-0 left-0 right-0 z-40 bg-transparent flex flex-col items-center justify-center px-6 lg:px-[120px] py-[10px]">
-        <div className="w-full flex flex-col items-start">
-          <a href="#" className="flex gap-[8px] items-end py-[16px] w-[125px]">
-            <Logo />
-          </a>
+      {/* Unified Header - responsive layout */}
+      <header className="absolute top-0 left-0 right-0 z-50">
+        {/* Mobile Header - visible below 1024px */}
+        <div className="block lg:hidden bg-black p-6">
+          <div className="flex items-center justify-between">
+            <a href="#" className="flex gap-[5.12px] items-end py-[10.24px] w-20">
+              <Logo small />
+            </a>
+            <button
+              onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Open menu"
+              className="text-white p-2 -m-2"
+            >
+              <svg
+                className="w-6 h-[18.695px]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop Header - visible at 1024px and above */}
+        <div className="hidden lg:block bg-transparent">
+          <div className="flex flex-col items-center justify-center px-[120px] py-[10px]">
+            <div className="w-full flex flex-col items-start">
+              <a href="#" className="inline-flex py-[16px]">
+                <Logo />
+              </a>
+            </div>
+          </div>
         </div>
       </header>
 
       {/* Desktop Navigation - fixed just below hero text, stays as you scroll */}
-      <nav className="fixed top-[680px] left-1/2 -translate-x-1/2 z-30 hidden lg:block">
+      <nav className="hidden lg:flex fixed top-[680px] left-1/2 -translate-x-1/2 z-30">
         <div className="flex items-center rounded-[71px] px-6 h-[52px] bg-nav-bg backdrop-blur-sm">
           {navItems.map((item) => (
             <a
@@ -42,29 +75,6 @@ export default function Navbar() {
           ))}
         </div>
       </nav>
-
-      {/* Mobile Menu Button - Fixed top right */}
-      {!isMobileMenuOpen && (
-        <button
-          className="lg:hidden fixed top-6 right-6 z-50 text-white backdrop-blur-md border border-overlay rounded-full p-4 shadow-[0_0_30px_rgba(255,255,255,0.1)] bg-nav-bg"
-          onClick={() => setIsMobileMenuOpen(true)}
-          aria-label="Open menu"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      )}
 
       {/* Mobile Menu */}
       <MobileMenu

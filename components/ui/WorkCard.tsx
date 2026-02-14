@@ -26,7 +26,7 @@ export default function WorkCard({
     <div className="flex flex-col gap-4 w-full">
       {/* Image Container */}
       <div
-        className="relative w-full aspect-[400/300] rounded-2xl overflow-hidden  group"
+        className="relative w-full aspect-[400/300] rounded-lg lg:rounded-2xl overflow-hidden group"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -64,18 +64,18 @@ export default function WorkCard({
       {/* Metadata */}
       <div className="flex flex-col gap-1">
         {/* Year & Location */}
-        <div className="flex gap-2 items-center">
-          <p className="font-montserrat font-normal text-base text-[#797979] leading-[1.05]">
+        <div className="flex gap-1 items-center">
+          <p className="font-montserrat font-normal text-[10px] lg:text-base text-[#797979] leading-[1.05]">
             {year}
           </p>
-          <div className="w-1.5 h-1.5 rounded-full bg-[#797979]" />
-          <p className="font-montserrat font-normal text-base text-[#797979] leading-[1.05]">
+          <div className="w-1 h-1 lg:w-1.5 lg:h-1.5 rounded-full bg-[#797979]" />
+          <p className="font-montserrat font-normal text-[10px] lg:text-base text-[#797979] leading-[1.05]">
             {location}
           </p>
         </div>
 
         {/* Project Title */}
-        <p className="font-montserrat font-medium text-xl text-white leading-[1.05]">
+        <p className="font-montserrat font-medium text-[16px] lg:text-xl text-white leading-[1.05]">
           {title}
         </p>
       </div>

@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import SectionLabel from '@/components/ui/SectionLabel';
 import ServiceCard from '@/components/ui/ServiceCard';
 
 const services = [
@@ -49,9 +48,15 @@ export default function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-8"
+          className="mb-8 flex items-center gap-3"
         >
-          <SectionLabel>Our Services</SectionLabel>
+          <div
+            className="h-8 w-[33px] rounded-full"
+            style={{ background: 'rgba(255, 231, 11, 1)' }}
+          />
+          <h2 className="font-montserrat text-[36px] font-[700] leading-[105%] tracking-[0%] text-white">
+            Our Services
+          </h2>
         </motion.div>
 
         {/* Service Cards */}
