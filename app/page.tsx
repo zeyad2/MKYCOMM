@@ -8,6 +8,9 @@ import BrandStatementSection from '@/components/sections/BrandStatementSection';
 import WorkSection from '@/components/sections/WorkSection';
 import FooterSection from '@/components/sections/FooterSection';
 import BlogsSliderSection from '@/components/sections/BlogsSliderSection';
+import BackgroundImageSection from '@/components/sections/BackgroundImageSection';
+import CTAImageSection from '@/components/sections/CTAImageSection';
+import CTATextSection from '@/components/sections/CTATextSection';
 
 export default function Home() {
   return (
@@ -17,12 +20,15 @@ export default function Home() {
         <HeroSection />
       </div>
       <VideoSection />
-      <JourneySection />
+      <BackgroundImageSection />
+      {/* <JourneySection /> */}
       <CreatorsSection />
       <ServicesSection />
       <BrandStatementSection />
       <WorkSection />
       <BlogsSliderSection />
+      <CTATextSection />
+      <CTAImageSection />
       <FooterSection />
     </main>
   );

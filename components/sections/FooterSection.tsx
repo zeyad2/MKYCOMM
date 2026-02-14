@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Logo from '@/components/icons/Logo';
 
 const socialLinks = [
   { label: 'Instagram', href: '#' },
@@ -16,163 +15,230 @@ const locations = [
 
 export default function FooterSection() {
   return (
-    <footer className="bg-black pt-24 pb-0 overflow-hidden">
-      <div className="mx-auto max-w-[1152px] px-6 lg:px-0 flex flex-col gap-14">
-        {/* Top row: Logo+Desc | Company+Social */}
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Left: Logo & Description */}
-          <div className="flex-1 flex flex-col gap-5">
-            <Logo width={200} height={108} dotSize={12} dotColor="#FFE70B" />
-            <p className="text-xl font-normal leading-[150%] text-[#797979] max-w-[467px]">
-              MKYCOMM Where strategic brilliance meets creative force. Elevating
-              brands with unmatched precision and insight.
-            </p>
-          </div>
-
-          {/* Right: Company & Social links */}
-          <div className="flex-1 flex flex-col gap-4">
-            {/* Headers row */}
-            <div className="w-full flex items-center">
-              <div className="flex-1">
-                <h4 className="text-[36px] font-medium leading-[105%] text-white">
-                  Company
-                </h4>
-              </div>
-              <div className="flex justify-end">
-                <h4 className="text-[36px] font-medium leading-[105%] text-white">
-                  Social
-                </h4>
-              </div>
-            </div>
-
-            {/* Links row */}
-            <div className="w-full flex gap-[55px]">
-              {/* Company links */}
-              <div className="flex-1 flex flex-col gap-4">
-                <a
-                  href="#"
-                  className="text-xl font-normal leading-[150%] text-white hover:text-white/80 transition-colors"
-                >
-                  MeetMKYCOMM
-                </a>
-                <div className="grid grid-cols-2 gap-x-[67px] gap-y-4">
-                  <a
-                    href="#"
-                    className="text-xl font-normal leading-[150%] text-white hover:text-white/80 transition-colors"
-                  >
-                    Our Work
-                  </a>
-                  <a
-                    href="#"
-                    className="text-xl font-normal leading-[150%] text-white hover:text-white/80 transition-colors"
-                  >
-                    Our Savvy
-                  </a>
-                  <a
-                    href="#"
-                    className="text-xl font-normal leading-[150%] text-white hover:text-white/80 transition-colors"
-                  >
-                    Let&apos;s Talk
-                  </a>
-                  <a
-                    href="#"
-                    className="text-xl font-normal leading-[150%] text-white hover:text-white/80 transition-colors"
-                  >
-                    Careers
-                  </a>
-                </div>
-              </div>
-
-              {/* Social links */}
-              <div className="flex flex-col items-end gap-4">
-                {socialLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="text-xl font-normal leading-[150%] text-white hover:text-white/80 transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom section */}
-        <div className="flex flex-col gap-8">
-          {/* Location row */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-            <div className="flex-1">
-              <h4 className="text-[36px] font-medium leading-[105%] text-white">
-                We are Located At
-              </h4>
-            </div>
-            <div className="flex items-center gap-4">
-              {locations.map((loc) => (
-                <div key={loc.code} className="flex items-center gap-2">
+    <footer className="relative bg-black overflow-hidden">
+      {/* Main footer container - height 662px as per Figma */}
+      <div className="relative h-[662px] w-full">
+        {/* Footer content wrapper */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1440px] pt-24 pb-[140px] flex items-center justify-center">
+          <div className="w-[1152px] flex flex-col gap-[56px]">
+            {/* Top section: Logo+Description | Company+Social */}
+            <div className="flex gap-8">
+              {/* Left: Logo & Description */}
+              <div className="flex-1 flex flex-col gap-5">
+                {/* Logo with dot */}
+                <div className="relative inline-block">
                   <div
-                    className="w-[33px] h-[32px] rounded-full shrink-0"
-                    style={{ background: loc.color }}
+                    className="absolute left-[188.38px] top-[83.85px] w-[11.615px] h-[11.615px] rounded-full z-10"
+                    style={{ backgroundColor: '#FFE70B' }}
                   />
-                  <span className="text-xl font-normal leading-[150%] text-white">
-                    {loc.code}
-                  </span>
+                  <p
+                    className="font-bold text-white whitespace-pre-line leading-[normal]"
+                    style={{
+                      fontFamily: 'var(--font-josefin), Josefin Sans, sans-serif',
+                      fontSize: '54.446px',
+                    }}
+                  >
+                    {`MKY\nCOMM`}
+                  </p>
                 </div>
-              ))}
+
+                {/* Description */}
+                <p
+                  className="text-[#797979] font-normal leading-[150%]"
+                  style={{
+                    fontFamily: 'Montserrat, sans-serif',
+                    fontSize: '20px',
+                    maxWidth: '466.706px',
+                  }}
+                >
+                  MKYCOMM Where strategic brilliance meets creative force.
+                  Elevating brands with unmatched precision and insight.
+                </p>
+              </div>
+
+              {/* Right: Company & Social links */}
+              <div className="flex-1 flex flex-col gap-4">
+                {/* Headers row */}
+                <div className="flex gap-20 items-center w-full">
+                  <div className="flex-1">
+                    <h4
+                      className="text-white font-medium leading-[105%]"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '36px',
+                      }}
+                    >
+                      Company
+                    </h4>
+                  </div>
+                  <div className="flex-1 flex justify-end">
+                    <h4
+                      className="text-white font-medium leading-[105%]"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '36px',
+                      }}
+                    >
+                      Social
+                    </h4>
+                  </div>
+                </div>
+
+                {/* Links row */}
+                <div className="flex gap-[55px] w-full items-start">
+                  {/* Company links - 2x3 grid */}
+                  <div className="flex-1 grid grid-cols-2 grid-rows-3 gap-x-4 gap-y-4">
+                    <p
+                      className="text-white font-normal leading-[150%] col-start-1 row-start-1"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '20px',
+                      }}
+                    >
+                      MeetMKYCOMM
+                    </p>
+                    <p
+                      className="text-white font-normal leading-[150%] col-start-1 row-start-2"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '20px',
+                      }}
+                    >
+                      Our Work
+                    </p>
+                    <p
+                      className="text-white font-normal leading-[150%] col-start-1 row-start-3"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '20px',
+                      }}
+                    >
+                      Let&apos;s Talk
+                    </p>
+                    <p
+                      className="text-white font-normal leading-[150%] col-start-2 row-start-2"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '20px',
+                      }}
+                    >
+                      Our Savvy
+                    </p>
+                    <p
+                      className="text-white font-normal leading-[150%] col-start-2 row-start-3"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '20px',
+                      }}
+                    >
+                      Careers
+                    </p>
+                  </div>
+
+                  {/* Social links - matching grid structure */}
+                  <div className="grid grid-rows-3 gap-y-4 items-start w-[107px]">
+                    {socialLinks.map((link) => (
+                      <p
+                        key={link.label}
+                        className="text-white font-normal leading-[150%] text-right"
+                        style={{
+                          fontFamily: 'Montserrat, sans-serif',
+                          fontSize: '20px',
+                        }}
+                      >
+                        {link.label}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Copyright area */}
-          <div className="flex flex-col gap-4">
-            {/* Divider */}
-            <div className="h-px bg-white/10" />
+            {/* Bottom section */}
+            <div className="flex flex-col gap-8">
+              {/* Location row */}
+              <div className="flex gap-4 w-full">
+                <div className="flex-1">
+                  <h4
+                    className="text-white font-medium leading-[105%]"
+                    style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontSize: '36px',
+                    }}
+                  >
+                    We are Located At
+                  </h4>
+                </div>
+                <div className="flex gap-4 items-center h-20">
+                  {locations.map((loc) => (
+                    <div key={loc.code} className="flex gap-2 items-center">
+                      <div
+                        className="w-[33px] h-8 rounded-full shrink-0"
+                        style={{ backgroundColor: loc.color }}
+                      />
+                      <p
+                        className="text-white font-normal leading-[150%]"
+                        style={{
+                          fontFamily: 'Montserrat, sans-serif',
+                          fontSize: '20px',
+                        }}
+                      >
+                        {loc.code}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-            {/* Policy row */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-              <span
-                className="text-xl leading-[24px] text-white"
-                style={{ fontWeight: 250 }}
-              >
-                &copy; 2026 MKYCOMM. All right reserved
-              </span>
-              <a
-                href="#"
-                className="text-xl leading-[24px] text-white hover:text-white/80 transition-colors"
-                style={{ fontWeight: 250 }}
-              >
-                Privacy Policy
-              </a>
+              {/* Copyright section */}
+              <div className="flex flex-col gap-0">
+                {/* Divider line */}
+                <div className="w-full border-t border-white/10 mb-5" />
+
+                {/* Policy row */}
+                <div
+                  className="flex items-center justify-between w-full text-white"
+                  style={{
+                    fontFamily: 'Montserrat, sans-serif',
+                    fontSize: '20px',
+                    opacity: 0.3,
+                    lineHeight: 'normal',
+                  }}
+                >
+                  <p>&copy; 2026 MKYCOMM. All right reserved</p>
+                  <p>Privacy Policy</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Large watermark text */}
-      <div className="relative w-full overflow-hidden mt-8" aria-hidden="true">
-        <div className="relative flex justify-center">
-          <span
-            className="font-bold whitespace-nowrap text-white translate-y-[30%]"
+        {/* Large watermark text */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-[575px] flex items-end">
+          <p
+            className="font-bold text-white whitespace-pre-wrap leading-[normal] h-[174.923px] w-[1334.368px]"
             style={{
-              fontSize: '232px',
-              lineHeight: '232px',
               fontFamily: 'var(--font-josefin), Josefin Sans, sans-serif',
+              fontSize: '232.199px',
             }}
           >
             MKYCOMM
-          </span>
-          <Image
-            src="/Artboard.png"
-            alt=""
-            width={231}
-            height={144}
-            className="absolute pointer-events-none"
-            style={{
-              left: 'calc(50% - 667px + 317px)',
-              top: '34px',
-              transform: 'rotate(-17.33deg)',
-            }}
-          />
+          </p>
+        </div>
+
+        {/* Artboard image */}
+        <div
+          className="absolute left-[317px] top-[34px] w-[263.577px] h-[206.679px] flex items-center justify-center"
+        >
+          <div className="rotate-[-17.33deg] flex-none">
+            <Image
+              src="/Artboard.png"
+              alt=""
+              width={231}
+              height={144}
+              className="object-contain"
+            />
+          </div>
         </div>
       </div>
     </footer>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Josefin_Sans } from "next/font/google";
+import { Montserrat, Josefin_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -15,6 +15,13 @@ const josefinSans = Josefin_Sans({
   display: "swap",
 });
 
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "MKYCOMM - Marketing Communications Agency",
   description: "We are a dynamic and innovative marketing communications agency dedicated to crafting cutting-edge solutions for global brands. Aiming at making every client a market leader, with an indelible impact in the market.",
@@ -27,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${josefinSans.variable} antialiased`}>
+      <body className={`${montserrat.variable} ${josefinSans.variable} ${poppins.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -17,28 +17,25 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div
-      className={`flex flex-col lg:flex-row gap-8 lg:gap-12 py-12 ${
-        !isLast ? 'border-b border-white/10' : ''
-      }`}
-    >
+      className="flex flex-col lg:flex-row gap-8 items-end justify-center pb-6 border-b border-[#797979]">
+      {/* Content */}
+      <div className="flex-1 flex flex-col gap-2 justify-end min-w-0">
+        <h3 className="text-xl lg:text-[24px] font-medium text-white leading-[1.05] max-w-[346px]">
+          {title}
+        </h3>
+        <p className="text-[12px] text-[#696666] font-[400] leading-[1.5]">
+          {description}
+        </p>
+      </div>
+
       {/* Image */}
-      <div className="w-full lg:w-1/3 h-[250px] lg:h-[300px] relative rounded-lg overflow-hidden flex-shrink-0">
+      <div className="w-full lg:w-[638px] h-[150px] p-[24px] relative rounded-[16px] overflow-hidden flex-shrink-0">
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill
           className="object-cover"
         />
-      </div>
-
-      {/* Content */}
-      <div className="flex-1 flex flex-col justify-center gap-4">
-        <h3 className="text-2xl lg:text-3xl font-semibold text-white leading-tight">
-          {title}
-        </h3>
-        <p className="text-base lg:text-lg text-white/70 leading-relaxed max-w-2xl">
-          {description}
-        </p>
       </div>
     </div>
   );

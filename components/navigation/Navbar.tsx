@@ -18,10 +18,10 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Header Bar - Logo */}
-      <header className="absolute top-0 left-0 right-0 z-40 flex justify-center items-center px-6 lg:px-[120px] py-[10px]">
-        <div className="w-full max-w-[var(--container-content)] flex items-start">
-          <a href="#" className="shrink-0">
+      {/* Header Bar - Logo - Matches Figma: px-[120px] py-[10px] */}
+      <header className="absolute top-0 left-0 right-0 z-40 bg-transparent flex flex-col items-center justify-center px-6 lg:px-[120px] py-[10px]">
+        <div className="w-full flex flex-col items-start">
+          <a href="#" className="flex gap-[8px] items-end py-[16px] w-[125px]">
             <Logo />
           </a>
         </div>

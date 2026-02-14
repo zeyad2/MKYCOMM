@@ -32,6 +32,8 @@
   --container-content: 1200px;
 
   --font-sans: var(--font-montserrat);
+  --font-poppins: var(--font-poppins);
+  --font-coolvetica: var(--font-josefin), 'Arial Rounded MT Bold', 'Helvetica Rounded', system-ui, sans-serif;
 }
 
 * {
@@ -59,6 +61,19 @@ body {
 /* Smooth transitions for interactive elements */
 button, a {
   transition: all 0.2s ease-in-out;
+}
+
+/* Font utilities */
+.font-montserrat {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+.font-poppins {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+.font-coolvetica {
+  font-family: var(--font-coolvetica);
 }
 
 /* Hide scrollbar utility */
