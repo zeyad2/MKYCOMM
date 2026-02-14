@@ -1,0 +1,120 @@
+/* Artboard positioning - adjust these values for each breakpoint */
+.artboardContainer {
+  position: absolute;
+  top: 20px;
+  left: 60%;
+}
+
+.artboardImage {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 500px) {
+  .artboardContainer {
+    top: 15px;
+    left: 120px;
+  }
+
+  .artboardImage {
+    width: 163.992px;
+    height: 102.495px;
+  }
+}
+
+
+
+/* Tablet - 768px+ */
+@media (min-width: 768px) {
+  .artboardContainer {
+    top: 60px;
+    left: 200px;
+  }
+
+  .artboardImage {
+    width: 160px;
+  }
+}
+
+/* Desktop - 1024px+ */
+@media (min-width: 1024px) {
+  .artboardContainer {
+    top: 34px;
+    left: 20%;
+  }
+
+  .artboardImage {
+    width: 200px;
+  }
+}
+
+/* Large Desktop - 1440px+ (matches Figma design) */
+@media (min-width: 1440px) {
+  .artboardContainer {
+    top: 54px;
+    left: 310px;
+  }
+
+  .artboardImage {
+    width: 231px;
+  }
+}
+
+@media (min-width: 1475px) {
+  .artboardContainer {
+    top: 54px;
+    left: 360px;
+  }
+
+  .artboardImage {
+    width: 231px;
+  }
+}
+
+
+@media (min-width: 1572px) {
+  .artboardContainer {
+    top: 54px;
+    left: 30%;
+  }
+
+  .artboardImage {
+    width: 231px;
+  }
+}
+
+/* Watermark text positioning */
+.watermarkContainer {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) translateY(60%);
+}
+
+.watermarkText {
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  user-select: none;
+  white-space: nowrap;
+  font-size: clamp(80px, 16vw, 232px);
+}
+
+@media (max-width: 480px) {
+
+  .watermarkText {
+    font-size: 54.292px;
+  }
+
+}
+
+
+
+@media (max-width: 480px) {
+
+  .watermarkText {
+    font-size: 54.292px;
+  }
+
+}

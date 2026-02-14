@@ -1,36 +1,11 @@
 import Image from 'next/image';
-import styles from './BackgroundImageSection.module.css';
+import styles from './OurJourneySection.module.css';
 
-export default function BackgroundImageSection() {
+export default function OurJourneySection() {
   return (
     <section className={styles.section}>
-      {/* Background world map with gradient overlay */}
-      <div className={styles.mapContainer}>
-        <div className={styles.mapWrapper}>
-          <Image
-            src="/journey-map-background.png"
-            alt=""
-            fill
-            className={styles.mapImage}
-            priority
-          />
-          {/* Gradient overlay - only on the map */}
-          <div className={styles.mapGradient} />
-        </div>
-      </div>
-
-      {/* Network visualization - positioned vector image */}
-      <div className={styles.networkContainer}>
-        <Image
-          src="/Vectordrawing.PNG"
-          alt=""
-          fill
-          className={styles.vectorImage}
-        />
-      </div>
-
-      {/* Our Journey Content - overlaid on the map */}
-      <div className={styles.contentContainer} >
+      {/* Our Journey Section */}
+      <div className={styles.contentContainer}>
         {/* Header: Dot + Title */}
         <div className={styles.header}>
           <div className={styles.dotIcon}>

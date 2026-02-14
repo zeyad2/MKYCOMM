@@ -21,7 +21,6 @@ export default function Home() {
       </div>
       <VideoSection />
       <BackgroundImageSection />
-      {/* <JourneySection /> */}
       <OurPulloffsSection />
       <CreatorsSection />
       <ServicesSection />
