@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function OurMagazineSection() {
   return (
@@ -61,9 +62,9 @@ export default function OurMagazineSection() {
 
               {/* Learn more */}
               <div className="flex justify-end">
-                <button className="font-montserrat font-medium text-[16px] text-white bg-transparent border-none px-[20px] py-[16px] cursor-pointer hover:opacity-70 transition-opacity">
+                <Link href="/poc" className="font-montserrat font-medium text-[16px] text-white px-[20px] py-[16px] hover:opacity-70 transition-opacity">
                   Learn more
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -127,9 +128,9 @@ export default function OurMagazineSection() {
 
             {/* Learn more */}
             <div className="flex justify-end">
-              <button className="font-montserrat font-medium text-[16px] text-white bg-transparent border-none px-[20px] py-[16px] cursor-pointer hover:opacity-70 transition-opacity">
+              <Link href="/poc" className="font-montserrat font-medium text-[16px] text-white px-[20px] py-[16px] hover:opacity-70 transition-opacity">
                 Learn more
-              </button>
+              </Link>
             </div>
           </div>
         </div>
