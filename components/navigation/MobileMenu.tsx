@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from '@/components/icons/Logo';
 
@@ -86,17 +87,20 @@ export default function MobileMenu({
               {/* Nav Items - 16px Montserrat Regular with 12px gap */}
               <nav className="flex flex-col gap-3">
                 {navItems.map((item, index) => (
-                  <motion.a
+                  <motion.div
                     key={item.label}
-                    href={item.href}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className="font-montserrat font-normal text-base leading-[1.5] text-white/80 hover:text-white/80 transition-colors"
-                    onClick={onClose}
                   >
-                    {item.label}
-                  </motion.a>
+                    <Link
+                      href={item.href}
+                      className="font-montserrat font-normal text-base leading-[1.5] text-white/80 hover:text-white/80 transition-colors"
+                      onClick={onClose}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
                 ))}
               </nav>
 

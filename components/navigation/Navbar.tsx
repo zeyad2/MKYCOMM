@@ -1,11 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Logo from '@/components/icons/Logo';
 import MobileMenu from './MobileMenu';
 
 const navItems = [
-  { label: 'MeetMKYCOMM', href: '#meet' },
+  { label: 'MeetMKYCOMM', href: '/meetmkycomm' },
   { label: 'Our Work', href: '#work' },
   { label: 'Our Savvy', href: '#savvy' },
   { label: 'Careers', href: '#careers' },
@@ -23,9 +24,9 @@ export default function Navbar() {
         {/* Mobile Header - visible below 1024px */}
         <div className="block lg:hidden bg-black p-6">
           <div className="flex items-center justify-between">
-            <a href="#" className="flex gap-[5.12px] items-end py-[10.24px] w-20">
+            <Link href="/" className="flex gap-[5.12px] items-end py-[10.24px] w-20">
               <Logo small />
-            </a>
+            </Link>
             <button
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open menu"
@@ -52,9 +53,9 @@ export default function Navbar() {
         <div className="hidden lg:block bg-transparent">
           <div className="flex flex-col items-center justify-center px-[120px] py-[10px]">
             <div className="w-full flex flex-col items-start">
-              <a href="#" className="inline-flex py-[16px]">
+              <Link href="/" className="inline-flex py-[16px]">
                 <Logo />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -64,14 +65,14 @@ export default function Navbar() {
       <nav className="hidden lg:flex fixed top-[680px] left-1/2 -translate-x-1/2 z-30">
         <div className="flex items-center rounded-[71px] px-6 h-[52px] bg-nav-bg backdrop-blur-sm">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
               href={item.href}
               className="group flex items-center justify-center gap-2 px-5 py-4 text-base font-medium leading-5 text-white/40 text-center whitespace-nowrap hover:text-white hover:-translate-y-[1px] transition-all duration-200"
             >
               <span className="w-[5px] h-[5px] rounded-full bg-current opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200" />
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
