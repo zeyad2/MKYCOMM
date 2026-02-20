@@ -84,6 +84,18 @@
   }
 }
 
+@media (min-width: 2040px) {
+  .artboardContainer {
+    top: 30px;
+    left: 35%;
+  }
+
+  .artboardImage {
+    width: 231px;
+  }
+}
+
+
 /* Watermark text positioning */
 .watermarkContainer {
   position: absolute;
