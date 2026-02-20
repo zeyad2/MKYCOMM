@@ -127,20 +127,20 @@ const allPeople: Person[] = [
 
 function PersonCard({ id, name, role, bio }: Person) {
   return (
-    <div className="group flex flex-col gap-[16px] shrink-0 w-full cursor-pointer">
+    <div className="group flex flex-col gap-[16px] shrink-0 w-full cursor-pointer" tabIndex={0}>
       {/* Image with hover overlay */}
       <div className="h-[300px] relative rounded-[16px] w-full overflow-hidden">
         <Image
           src={`/people-images/person-${id}.png`}
           alt={name}
           fill
-          className="object-cover object-top transition-[filter] duration-300 group-hover:brightness-50"
+          className="object-cover object-top transition-[filter] duration-300 group-hover:brightness-50 group-focus-within:brightness-50"
           sizes="(max-width: 1024px) 282px, 25vw"
         />
 
         {/* Dark overlay — rgba(15,15,15,0.85) per Figma */}
         <div
-          className="absolute inset-0 rounded-[16px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="absolute inset-0 rounded-[16px] opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300"
           style={{ background: 'rgba(15, 15, 15, 0.85)' }}
           aria-hidden="true"
         />
@@ -265,21 +265,21 @@ export default function OurPeopleSection() {
             style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' } as React.CSSProperties}
           >
             {allPeople.map(p => (
-              <div key={p.id} className="group shrink-0 flex flex-col gap-[16px]" style={{ width: 282 }}>
+              <div key={p.id} className="group shrink-0 flex flex-col gap-[16px]" style={{ width: 282 }} tabIndex={0}>
                 <div className="relative rounded-[16px] overflow-hidden" style={{ width: 282, height: 300 }}>
                   <Image
                     src={`/people-images/person-${p.id}.png`}
                     alt={p.name}
                     fill
-                    className="object-cover object-top transition-[filter] duration-300 group-hover:brightness-50"
+                    className="object-cover object-top transition-[filter] duration-300 group-hover:brightness-50 group-focus-within:brightness-50"
                     sizes="282px"
                   />
                   <div
-                    className="absolute inset-0 rounded-[16px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 rounded-[16px] opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300"
                     style={{ background: 'rgba(15, 15, 15, 0.85)' }}
                     aria-hidden="true"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center p-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center p-[24px] opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
                     <p className="font-montserrat font-normal text-[14px] leading-[1.2] text-white text-center m-0">
                       {p.bio}
                     </p>

@@ -1,14 +1,12 @@
 import Image from 'next/image';
+import LetsTalkButton from '@/components/ui/LetsTalkButton';
 
 export default function LetsTalkSection() {
   return (
     <section className="bg-black">
 
-      {/* ── Part 1: Headline + inline thumbnail ──────────────────────────────
-          Desktop 1440 px → 1440 × 180 px | 64 px text | image 124.8 × 64 px
-          Mobile  390 px  → 390  × 62 px  | 24 px text | image 47.776 × 24.5 px
-      ─────────────────────────────────────────────────────────────────────── */}
-      <div className="relative w-full bg-black overflow-hidden">
+
+      <div className="relative w-full bg-black overflow-hidden mt-25 mb-25">
         <div className="w-full flex items-center justify-center ltalk-text-section">
           <h2 className="font-montserrat font-bold text-white text-center ltalk-heading">
             <span className="block">Ready for a partner who</span>
@@ -16,7 +14,7 @@ export default function LetsTalkSection() {
               <span className="whitespace-nowrap">thinks in&nbsp;</span>
               <span className="relative inline-block overflow-hidden flex-shrink-0 ltalk-img-wrapper">
                 <Image
-                  src="/small-lets-talk-img.png"
+                  src="/6344308350b41adb87083947ce336799dfc26514.jpg"
                   alt=""
                   fill
                   className="object-cover"
@@ -29,15 +27,12 @@ export default function LetsTalkSection() {
         </div>
       </div>
 
-      {/* ── Part 2: Background image + "Let's Talk" ──────────────────────────
-          Desktop 1440 px → 1440 × 810 px | "Let's Talk" 64 px centered
-          Mobile  390 px  → 390  × 220 px | "Let's Talk" 18 px centered
-      ─────────────────────────────────────────────────────────────────────── */}
+  
       <div className="relative w-full overflow-hidden ltalk-bg-container">
 
         {/* Background image */}
         <Image
-          src="/let's-talk-img.png"
+          src="/6344308350b41adb87083947ce336799dfc26514.jpg"
           alt=""
           fill
           className="object-cover object-center"
@@ -59,9 +54,7 @@ export default function LetsTalkSection() {
 
         {/* "Let's Talk" — centered (Figma metadata: 50 % / 50 % of section) */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <p className="font-montserrat font-bold text-white text-center m-0 ltalk-cta-text">
-            Let&apos;s Talk
-          </p>
+          <LetsTalkButton className="font-montserrat font-bold text-white ltalk-cta-text" />
         </div>
       </div>
 

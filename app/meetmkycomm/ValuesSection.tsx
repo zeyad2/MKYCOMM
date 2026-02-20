@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function ValuesSection() {
   return (
     <section className="bg-black overflow-hidden">
@@ -12,11 +14,13 @@ export default function ValuesSection() {
               {/* Card: Amplification with Intention */}
               <div className="relative h-[650px] overflow-hidden rounded-[16px] bg-[#000FFF]">
              
-                <img
+                <Image
                   src="/meetmky-vectors/vector1.png"
                   alt=""
                   aria-hidden="true"
-                  style={{ position: 'absolute', left: -25, top: 247, width: 265, height: 633 }}
+                  width={265}
+                  height={633}
+                  style={{ position: 'absolute', left: -25, top: 247 }}
                 />
                
                 <p
@@ -31,11 +35,12 @@ export default function ValuesSection() {
               <div className="relative h-[650px] overflow-hidden rounded-[16px] bg-[#000FFF]">
            
                 <div style={{ position: 'absolute', left: 105, top: 39, width: 457, height: 618 }}>
-                  <img
+                  <Image
                     src="/meetmky-vectors/vector4.png"
                     alt=""
                     aria-hidden="true"
-                    className="block w-full h-full"
+                    fill
+                    className="object-contain"
                   />
                 </div>
                
@@ -55,11 +60,13 @@ export default function ValuesSection() {
               {/* Card: Culture Intelligence */}
               <div className="relative h-[650px] overflow-hidden rounded-[16px] bg-[#000FFF]">
               
-                <img
+                <Image
                   src="/meetmky-vectors/vector2.png"
                   alt=""
                   aria-hidden="true"
-                  style={{ position: 'absolute', left: 39, top: 259, width: 305, height: 658 }}
+                  width={305}
+                  height={658}
+                  style={{ position: 'absolute', left: 39, top: 259 }}
                 />
                 <p
                   className="absolute font-montserrat font-bold text-[36px] leading-[1.05] text-white m-0"
@@ -72,11 +79,13 @@ export default function ValuesSection() {
               {/* Card: Legacy Through Clarity */}
               <div className="relative h-[650px] overflow-hidden rounded-[16px] bg-[#000FFF]">
              
-                <img
+                <Image
                   src="/meetmky-vectors/vector5.png"
                   alt=""
                   aria-hidden="true"
-                  style={{ position: 'absolute', left: 113, top: 251, width: 271, height: 467 }}
+                  width={271}
+                  height={467}
+                  style={{ position: 'absolute', left: 113, top: 251 }}
                 />
                 <p
                   className="absolute font-montserrat font-bold text-[36px] leading-[1.05] text-white m-0"
@@ -95,11 +104,12 @@ export default function ValuesSection() {
               <div className="relative h-[650px] overflow-hidden rounded-[16px] bg-[#000FFF]">
               
                 <div style={{ position: 'absolute', left: -84, top: -105, width: 447, height: 514 }}>
-                  <img
+                  <Image
                     src="/meetmky-vectors/vector3.png"
                     alt=""
                     aria-hidden="true"
-                    className="block w-full h-full"
+                    fill
+                    className="object-contain"
                   />
                 </div>
               
@@ -114,11 +124,13 @@ export default function ValuesSection() {
               {/* Card: Trusted Leadership */}
               <div className="relative h-[650px] overflow-hidden rounded-[16px] bg-[#000FFF]">
             
-                <img
+                <Image
                   src="/meetmky-vectors/vector6.png"
                   alt=""
                   aria-hidden="true"
-                  style={{ position: 'absolute', left: 147, top: 363, width: 299, height: 400 }}
+                  width={299}
+                  height={400}
+                  style={{ position: 'absolute', left: 147, top: 363 }}
                 />
                 <p
                   className="absolute font-montserrat font-bold text-[36px] leading-[1.05] text-white m-0"
@@ -146,11 +158,13 @@ export default function ValuesSection() {
               vector1: lollipop plant
               Figma: left-[-11.61px] top-[114.68px] w-[123.036px] h-[293.893px]
             */}
-            <img
+            <Image
               src="/meetmky-vectors/vector1.png"
               alt=""
               aria-hidden="true"
-              style={{ position: 'absolute', left: -11.61, top: 114.68, width: 123.036, height: 293.893 }}
+              width={123}
+              height={294}
+              style={{ position: 'absolute', left: -11.61, top: 114.68 }}
             />
             {/*
               Text inset: [6.29% top, 11.04% right, 75.83% bottom, 9.2% left]
@@ -173,11 +187,13 @@ export default function ValuesSection() {
               Effective from card left: 48.75 - 17.65 = 31.1px
               Effective width: 212.151 + 17.65 = 229.8px
             */}
-            <img
+            <Image
               src="/meetmky-vectors/vector4.png"
               alt=""
               aria-hidden="true"
-              style={{ position: 'absolute', left: 31, top: 18, width: 230, height: 287 }}
+              width={230}
+              height={287}
+              style={{ position: 'absolute', left: 31, top: 18 }}
             />
             {/*
               Text inset: [77.81% top, 5.15% right, 3.31% bottom, 7.98% left]
@@ -195,11 +211,12 @@ export default function ValuesSection() {
           <div className="relative h-[302px] overflow-hidden bg-[#000FFF]" style={{ borderRadius: 7.429 }}>
       
             <div style={{ position: 'absolute', left: -55, top: -53.86, width: 207.536, height: 238.643 }}>
-              <img
+              <Image
                 src="/meetmky-vectors/vector3.png"
                 alt=""
                 aria-hidden="true"
-                className="block w-full h-full"
+                fill
+                className="object-contain"
               />
             </div>
         
@@ -219,11 +236,13 @@ export default function ValuesSection() {
           {/* Card: Culture Intelligence */}
           <div className="relative h-[302px] overflow-hidden bg-[#000FFF]" style={{ borderRadius: 7.429 }}>
         
-            <img
+            <Image
               src="/meetmky-vectors/vector2.png"
               alt=""
               aria-hidden="true"
-              style={{ position: 'absolute', left: 11, top: 120, width: 141.607, height: 305.5 }}
+              width={142}
+              height={306}
+              style={{ position: 'absolute', left: 11, top: 120 }}
             />
            
             <p
@@ -241,11 +260,13 @@ export default function ValuesSection() {
               Figma: left-[37px] top-[114.14px] w-[125.821px] h-[216.821px]
               Overflows bottom – clipped
             */}
-            <img
+            <Image
               src="/meetmky-vectors/vector5.png"
               alt=""
               aria-hidden="true"
-              style={{ position: 'absolute', left: 37, top: 114, width: 125.821, height: 216.821 }}
+              width={126}
+              height={217}
+              style={{ position: 'absolute', left: 37, top: 114 }}
             />
             {/*
               Text inset: [5.96% top, 11.04% right, 74.83% bottom, 9.2% left]
@@ -266,11 +287,13 @@ export default function ValuesSection() {
               Figma: left-[53px] top-[165.29px] w-[138.821px] h-[185.714px]
               Overflows bottom slightly – clipped
             */}
-            <img
+            <Image
               src="/meetmky-vectors/vector6.png"
               alt=""
               aria-hidden="true"
-              style={{ position: 'absolute', left: 53, top: 165, width: 138.821, height: 185.714 }}
+              width={139}
+              height={186}
+              style={{ position: 'absolute', left: 53, top: 165 }}
             />
             {/*
               Text inset: [6.15% top, 11.2% right, 81.92% bottom, 9.38% left]

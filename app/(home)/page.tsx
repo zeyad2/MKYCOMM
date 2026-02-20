@@ -1,5 +1,19 @@
+import type { Metadata } from 'next';
 import Navbar from '@/components/navigation/Navbar';
 import HeroSection from './_components/HeroSection';
+
+export const metadata: Metadata = {
+  title: 'MKYCOMM | Marketing Communications Agency',
+  description:
+    'Dynamic and innovative marketing communications agency specializing in amplification and culture intelligence. Serving brands across 15+ countries.',
+  openGraph: {
+    title: 'MKYCOMM | Marketing Communications Agency',
+    description:
+      'Dynamic and innovative marketing communications agency specializing in amplification and culture intelligence.',
+    type: 'website',
+  },
+  robots: 'index,follow',
+};
 import VideoSection from './_components/VideoSection';
 import CreatorsSection from './_components/CreatorsSection';
 import ServicesSection from './_components/ServicesSection';

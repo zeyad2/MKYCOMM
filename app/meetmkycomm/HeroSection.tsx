@@ -4,15 +4,15 @@ export default function MeetMKYCOMMHeroSection() {
   return (
     <section className="relative w-full bg-black">
       {/* Desktop Hero - visible at 1024px+ */}
-      <div className="hidden lg:flex flex-col items-start w-full px-[120px] pt-[190px]">
-        <div className="flex items-start w-[1200px] gap-[60px] h-[478px] pb-16">
+      <div className="hidden lg:flex flex-col items-start w-full px-8 xl:px-[120px] pt-[190px] xl:items-center">
+        <div className="flex items-start w-full xl:w-[1200px] gap-[60px] h-[478px] pb-16">
           {/* Left Column - Heading with embedded video */}
-          <div className="shrink-0 w-[680px] h-[414px]">
-            <h1 className="font-montserrat font-bold text-white m-0 p-0 text-[72px] leading-[1.51]">
+          <div className="shrink-0 w-[55%] xl:w-[680px] h-[414px]">
+            <h1 className="font-montserrat font-bold text-white m-0 p-0 text-[62px] xl:text-[72px] leading-[1.51]">
               Meet MKYCOMM,
               <br />
               Where{' '}
-              <span className="inline-block relative overflow-hidden align-middle w-[191px] h-[77px] mx-3">
+              <span className="inline-block relative overflow-hidden align-middle w-[166px] h-[67px] xl:w-[191px] xl:h-[77px] mx-3">
                 <video
                   autoPlay
                   loop

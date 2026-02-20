@@ -84,6 +84,17 @@ button, a {
   display: none;
 }
 
+/* ── Let's Talk Button Animation ─────────────────────────────── */
+.ltalk-btn {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
 /* Accessibility: Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import LetsTalkButton from '@/components/ui/LetsTalkButton';
 
 export default function CTAImageSection() {
   return (
@@ -54,9 +55,7 @@ export default function CTAImageSection() {
 
         {/* "Let's Talk" Text */}
         <div className="absolute flex items-center justify-center p-[10px] cta-lets-talk-wrapper">
-          <p className="font-montserrat font-bold text-white text-center shrink-0 cta-lets-talk-text">
-            Let's Talk
-          </p>
+          <LetsTalkButton className="font-montserrat font-bold text-white shrink-0 cta-lets-talk-text" />
         </div>
       </div>
 
